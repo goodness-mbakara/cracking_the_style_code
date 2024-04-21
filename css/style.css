@@ -71,7 +71,8 @@ body {
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
-  color: #797979;
+  color: black;
+  background-color: #E3E9F2;
 }
 
 h1,
@@ -219,10 +220,9 @@ ul {
 
 .header_area .navbar .nav .nav-item .nav-link {
   font: 500 12px/80px "Open Sans", sans-serif;
-  text-transform: uppercase;
+  font-weight: 600;
   color: #020a21;
   padding: 0px;
-  font-weight: 500;
   display: inline-block;
   font-size: 14px;
 }
@@ -552,11 +552,13 @@ h2 .blue-text {
 }
 
 .feature-section {
-  height: 400px;
-  margin: 0 30px;
+  height: 200px;
+  margin: -5% 30px;
   background-color: #365DA3;
   padding: 60px 0;
   border-radius: 10px;
+  z-index: 1000;
+
 }
 
 @media (max-width: 767px) {
@@ -649,6 +651,19 @@ h2 .blue-text {
   background-size: cover;
   position: relative;
   color: white;
+  z-index: -1;
+}
+
+.banner-area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #456297;
+  opacity: 0.5;
+  /* Red with 50% opacity */
 }
 
 .bannerr-area {
@@ -3948,7 +3963,7 @@ h6 {
 .main_btn {
   display: inline-block;
   background: #365DA3;
-  padding: 0px 18px;
+  padding: 0px 22px;
   color: #fff;
   font-family: "Playfair Display", serif;
   font-size: 14px;
@@ -4299,6 +4314,7 @@ h6 {
   border-top: 0;
   padding: 28px 30px 6px;
   transition: all 300ms linear 0s;
+  color: black;
 }
 
 @media (max-width: 1199px) {
@@ -4313,7 +4329,7 @@ h6 {
 }
 
 .card-team__body h3 a {
-  color: #2a2a2a;
+  color: black;
 }
 
 .card-team__body p {
@@ -4549,15 +4565,13 @@ h6 {
 /* About Area css
 ============================================================================================ */
 .about-area {
-  background: #f7f7f7;
-  background-image: url(../img/background/bg_1.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: #E3E9F2;
+
   position: relative;
   padding-top: 100px;
   padding-bottom: 110px;
-  margin-top: -110px;
-  border-radius: 70px;
+  margin-top: 110px;
+
 }
 
 @media (max-width: 991px) {
@@ -4566,7 +4580,18 @@ h6 {
   }
 }
 
-.about-area:after {
+@media (max-width: 991px) {
+  .none {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+/* .about-area:after {
   content: '';
   position: absolute;
   left: 0;
@@ -4575,18 +4600,14 @@ h6 {
   background: url(../img/dancingWomen.png);
   background-size: auto;
   z-index: 11;
-  height: 90%;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: right bottom;
   border-radius: 50px;
   margin-top: -20px;
-}
+} */
 
-@media (max-width: 991px) {
-  .about-area:after {
-    display: none;
-  }
-}
+@media (max-width: 991px) {}
 
 @media (min-width: 1199px) and (max-width: 1199px) {
   .about-area .about-content {
